@@ -3,7 +3,7 @@ This script will download a site's AP pictures and maps from your Mist deploymen
 
 After cloning this repository, you will need to install the required Python modules by running `pip install -r requirements.txt`.
 
-To make things easier, you can also create another file called `.env` in the repository folder and create the following variables bekiw with Mist information assigned to them. If you do not complete this step, the script will prompt you for the required information.
+To make things easier, you can also create another file called `.env` in the repository folder and create the following variables below with Mist information assigned to them. If you do not complete this step, the script will prompt you for the required information.
 * MIST_API_TOKEN (ex. **MIST_API_TOKEN=RANDOM_STRING_OF_CHARACTERS**)
 * MIST_ORG_ID (ex. **MIST_ORG_ID=RANDOM_STRING_OF_CHARACTERS**)
 
