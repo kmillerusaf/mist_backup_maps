@@ -162,15 +162,8 @@ def get_site_maps(api_token, site_id):
 
 def plot_aps(image_name, file_path, aps):
     convert_modes = ["CMYK", "L", "P", "RGBA"] # 'CMYK' is Cyan, Magenta, Yellow, and Black, 'L' is grayscale, 'P' is Indexed Color, 'RGBA' is transparency applied
-    font_path = "/Library/Fonts/MartianMono-VariableFont_wdth,wght.ttf"
+    font_path = "/Library/Fonts/MartianMono-VariableFont_wdth,wght.ttfff"
     img_path = file_path + "/maps/" + image_name
-    try:
-        img_font = ImageFont.truetype(font_path, 9)
-    except FileNotFoundError:
-        print("Error: Font file not found. Loading the default font.")
-        ImageFont.load_default()
-    except Exception as e:
-        print(f"An error occurred: {e}")
             
     try:
         with Image.open(img_path) as img:
@@ -183,6 +176,14 @@ def plot_aps(image_name, file_path, aps):
                 print(f"{image_name} has been converted to RGB")
             else:
                 draw = ImageDraw.Draw(img)
+
+            try:
+                img_font = ImageFont.truetype(font_path, 9)
+            except OSError:
+                print("Error: Font file not found. Loading the default font.")
+                img_font = ImageFont.load_default()
+            except Exception as e:
+                print(f"An error occurred: {e}")
             
             coordinates = []
     
