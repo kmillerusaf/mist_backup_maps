@@ -16,3 +16,5 @@ api_base_url = "https://**CHANGE_ME**/api/v1/"
 ## What to expect
 
 As the script runs, a new directory with the site's name will be created in the repository folder along with sub-directories that contain pictures of the APs (if present) and pictures of your maps (if present) respectively. A CSV with a timestamp of the date that you run the script will also be created in the main directory. That CSV will contain the raw data for the AP(s) positioning on the map(s).
+
+ℹ️ To save bandwidth and time, if a file has already been downloaded, it will skip it and move on to the next. If you'd like to download fresh copies of the images or maps, either rename the main/sub-directories or delete/rename the files.
