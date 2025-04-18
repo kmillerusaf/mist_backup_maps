@@ -150,7 +150,10 @@ def get_site_maps(api_token, site_id):
         json_data = response.json()
         if len(json_data) > 0:
             for map in json_data:
-                site_maps.append({map["name"]: [map["id"], map["url"]]})
+                if map.get("id") and map.get("url"):
+                    site_maps.append({map["name"]: [map["id"], map["url"]]})
+                else:
+                    print(f"{map['name']} does not have a map uploaded.")
             return site_maps
         else:
             print("There are no maps uploaded for this site.")
